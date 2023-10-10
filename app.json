@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/home/index",
+    "pages/category/index",
+    "pages/cart/index",
+    "pages/user/index"
+  ],
+  "tabBar": {
+    "color": "#000",
+    "backgroundColor": "white",
+    "borderStyle": "black",
+    "selectedColor": "#fc3151",
+    "position": "bottom",
+    "custom": false,
+    "list": [ {
+    "pagePath": "pages/home/index",
+    "iconPath": "asserts/images/home.png",
+    "selectedIconPath": "asserts/images/home-selected.png",
+    "text": "首页"
+    }, {
+    "pagePath": "pages/category/index",
+    "iconPath": "asserts/images/category.png",
+    "selectedIconPath": "asserts/images/category-selected.png",
+    "text": "分类"
+    }, {
+    "pagePath": "pages/cart/index",
+    "iconPath": "asserts/images/cart.png",
+    "selectedIconPath": "asserts/images/cart-selected.png",
+    "text": "购物车"
+    }, {
+    "pagePath": "pages/user/index",
+    "iconPath": "asserts/images/user.png",
+    "selectedIconPath": "asserts/images/user-selected.png",
+    "text": "我的"
+    }
+    ]
+    },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#caa",
+    "navigationBarTitleText": "ELE Mall",
+    "navigationBarTextStyle":"black"
+  },
+  
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

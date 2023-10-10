@@ -1,0 +1,31 @@
+<!--pages/home/index.wxml-->
+<view class="section home-page-header"> 
+  <swiper autoplay="{{true}}" duration="500" interval="4000" indicator-dots="{{true}}"easing-function="easeInOutCubic"> 
+  <block wx:for="{{banners}}" wx:key="goodId"> 
+    <swiper-item> 
+      <image class="swiper-image" src="{{item.imgurl}}" mode="aspectFill"></image>     
+    </swiper-item> 
+  </block> 
+  </swiper> 
+</view> <!-- home-page-header --> 
+<view class="section goods-list">   
+  <block wx:for="{{goodsList}}" wx:for-item="good" wx:key="goodId"> 
+  <view wx:if="{{good !== null}}" class="goods-card"> 
+    <image src="{{good.previewImgs[0]}}" mode="widthFix" class="goods-card-image"></image> 
+    <view class="goods-card-body"> 
+      <view class="goods-card-title"> 
+        <text>{{good.title}}</text>       
+      </view> 
+      <view class="goods-card-tag"> 
+        <text>{{good.tag}}</text> 
+      </view> 
+      <view class="goods-card-lastline"> 
+        <text>¥{{good.price}}</text> 
+      </view> 
+  </view> 
+</view> 
+  </block> 
+
+</view> <!-- goods-list --> 
+
+ 
