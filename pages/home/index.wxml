@@ -3,14 +3,15 @@
   <swiper autoplay="{{true}}" duration="500" interval="4000" indicator-dots="{{true}}"easing-function="easeInOutCubic"> 
   <block wx:for="{{banners}}" wx:key="goodId"> 
     <swiper-item> 
-      <image class="swiper-image" src="{{item.imgurl}}" mode="aspectFill"></image>     
+      <image class="swiper-image" src="{{item.imgurl}}" mode="aspectFill"data-goodid="{{item.goodId}}" bindtap="onClickGoodDetail">
+      </image> 
     </swiper-item> 
   </block> 
   </swiper> 
 </view> <!-- home-page-header --> 
 <view class="section goods-list">   
-  <block wx:for="{{goodsList}}" wx:for-item="good" wx:key="goodId"> 
-  <view wx:if="{{good !== null}}" class="goods-card"> 
+  <block wx:for="{{goodsList}}" wx:for-item="good" wx:key="goodId" > 
+  <view wx:if="{{good !== null}}" class="goods-card" data-good-id="{{good.goodId}}" bindtap="onClickGoodDetail"> 
     <image src="{{good.previewImgs[0]}}" mode="widthFix" class="goods-card-image"></image> 
     <view class="goods-card-body"> 
       <view class="goods-card-title"> 
@@ -25,7 +26,6 @@
   </view> 
 </view> 
   </block> 
-
 </view> <!-- goods-list --> 
 
  

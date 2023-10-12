@@ -1,0 +1,67 @@
+<!--pages/goods/detail/index.wxml-->
+<swiper class="header-swiper" autoplay="{{true}}" duration="500" interval="4000" indicator-dots="{{true}}" easing-function="easeInOutCubic"> 
+  <block wx:for="{{goodDetail.previewImgs}}"  wx:for-item="item" wx:key="*this"> 
+	  <swiper-item> 	 
+      <image class="swiper-image" src="{{item}}" mode="scaleToFill"></image> 
+    </swiper-item> 
+  </block> 
+</swiper> 
+ 
+<view class="section good-header"> 
+  <view class="header-numbers"> 
+    <view class="left"> 
+      ¥<text class="price">{{goodDetail.price}}</text> 
+    </view> 
+    <view class="right">       
+     已售{{goodDetail.soldNum}}件 
+    </view> 
+  </view> 
+  <view class="header-title"> 
+    {{goodDetail.title}} 
+  </view> 
+</view> 
+ 
+<view class="section goodcomments" bindtap="onClickGoodCommnts"> 
+  <view class="commnents-header"> 
+    <view class="commnents-count"> 
+      评价(<text>{{goodDetail.ratingNum}}</text>) 
+    </view> 
+    <view class="comments-rating"> 
+      <view class="star-rating"> 
+          <span>☆☆☆☆☆</span> 
+        <view class="star-rating__current" style="width: {{goodDetail.rating}}%;"> 
+          <span>★★★★★</span> 
+        </view> 
+      </view> 
+    </view>
+    > 
+  </view> 
+</view> 
+ 
+<view class="section good-desc"> 
+  <view class="good-desc-header"> 
+    <span class="good-desc-header__line"></span> 
+    <span>商品详情</span> 
+  </view> 
+ 
+  <view class="good-desc-body"> 
+    <block wx:for="{{goodDetail.descImgs}}" wx:for-item="img" wx:key="*this">       
+      <image class="good-desc-images" src="{{img}}" mode="widthFix"> 
+      </image> 
+    </block> 
+  </view> 
+</view> 
+ 
+<view class="good-footer"> 
+  <image class="footer-image footer-store-image" src="/asserts/images/store.png" bindtap="onClickStore">
+</image> 
+  <text class="footer-text footer-store-text" bindtap="onClickStore">店铺</text> 
+  <view class="footer-cart-image" bindtap="onClickCart"> 
+    <image class="footer-image" src="/asserts/images/cart.png"> 
+    </image> 
+    <span class="cart-count">{{goodCountInCart}}</span> 
+  </view> 
+  <text class="footer-text footer-cart-text" bindtap="onClickCart">购物车</text>  
+  <text class="footer-text-bk footer-addcart-text" bindtap="onClickAddCart">加入购物车</text>   
+  <text class="footer-text-bk footer-buynow-text" bindtap="onClickBuyNow" data-goodid="{{goodDetail.goodId}}">立即购买</text> 
+</view> 
