@@ -190,4 +190,40 @@ let mockGoodData = [
      return mockBannerData; 
   } 
    
-  
+  //商品品类数据
+let mockCatlogData = [{
+  title: "手机",
+  subList: new Array(20).fill({
+  title: "手机品类",
+  image: "//img11.360buyimg.com/n7/jfs/t1/122119/40/30036/19077/6343f73eEe1bb7c9b/67e372591ec1d308.jpg.avif"
+  })
+  },{
+  title: "数码",
+  subList: new Array(10).fill({
+    title: "数码品类",
+    image: "//img10.360buyimg.com/n3/jfs/t2971/15/167732091/93002/204c1016/574d9d9aNe4e6fa7a.jpg"
+  })
+},{
+    title: "图书",
+    subList: new Array(5).fill({
+    title: "图书品类",
+    image: "//img12.360buyimg.com/n3/jfs/t1/136498/30/6868/364458/5f3276adEd05c78ef/2210770765ad8771.jpg"
+    })
+    },{
+    title: "男装",
+    subList: null
+    },{
+    title: "女装",
+    subList: null
+    },{
+    title: "母婴",
+    subList: null
+    },{
+    title: "百货",
+    subList: null
+    }];
+//获取商品分类数据
+export function mockgetGoodCatlogListData() {
+  return mockCatlogData;
+}
+    

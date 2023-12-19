@@ -1,2 +1,26 @@
 <!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="header">
+  <view class="search-bar">
+    <icon type="search"></icon>
+    <input type="text" bindconfirm="searchClicked" confirm-type='search' placeholder="Search..."></input>
+    <image src="/asserts/images/scancode.png" mode="aspectFill" bindtap="openCamera"></image>
+  </view>
+</view>
+
+
+<view class="content">
+  <view class="left-navbar">
+    <block wx:for="{{catlogList}}" wx:key='title'>
+      <view wx:if="{{activeIndex === index}}" class="navbar-item selected" bindtap="catalogClicked">{{item.title}}</view>
+      <view wx:else class="navbar-item" bindtap="catalogClicked" data-index="{{index}}">{{item.title}}</view>
+    </block>
+</view>
+  <view class="right-content">
+    <block wx:for="{{catlogList[activeIndex].subList}}" wx:key='index'>
+      <view class="catlog-card" bindtap="catlogCardClicked">
+        <image src="{{item.image}}" mode="aspectFill"></image>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+</view>

@@ -2,5 +2,6 @@
 export {   
   mockgetGoodsListData as getGoodsListData,   
   mockgetGoodDataById as getGoodDataById,   
-  mockgetMallBannerListData as getMallBannerListData, 
+  mockgetMallBannerListData as getMallBannerListData,
+  mockgetGoodCatlogListData as getGoodCatlogListData, 
 } from "./mockMallData"
