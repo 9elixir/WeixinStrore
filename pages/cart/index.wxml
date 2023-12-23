@@ -1,2 +1,63 @@
 <!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="cart-group">
+<block wx:for="{{cartData.goodsTree}}" wx:for-item="storeItem" wx:for-index="storeIdx" wx:key="storeName">
+<view class="store-goods-section">
+<view class="store-line">
+<icon type="{{storeItem.selected ? 'success' : 'circle'}}" 
+color="{{storeItem.selected ? 'rgb(255, 70, 60)' : ''}}" bindtap="toggleStoreEntry" 
+data-store-idx="{{storeIdx}}" data-store-name="{{storeItem.storeName}}"></icon>
+<view class="storelink" bindtap="storeLinkClicked">
+<image src="/asserts/images/store.png"></image>
+<text>{{storeItem.storeName}}</text>
+<text>></text>
+</view>
+</view>
+<block wx:for="{{storeItem.goodsList}}" wx:for-item="goodItem" wx:key="goodId">
+<view class="goods-item">
+<icon type="{{goodItem.selected ? 'success' : 'circle'}}" 
+color="{{goodItem.selected ? 'rgb(255, 70, 60)' : ''}}" bindtap="toggleGoodEntry" 
+data-good-id="{{goodItem.goodId}}"></icon>
+<image class="goods-item-image" src="{{goodItem.image}}" mode="aspectFill" bindtap="goodItemClicked" data-good-id="{{goodItem.goodId}}"></image>
+<view class="good-item-details">
+<view class="details-title" bindtap="goodItemClicked" data-good-id="{{goodItem.goodId}}">
+<text>{{goodItem.title}}</text>
+</view>
+<view class="details-numbers">
+<view class="details-price">
+¥{{goodItem.price}}
+</view>
+<view class="details-addminus">
+<view class="cart-count">
+  <text class="minus" bindtap="goodCountMinus" d
+ata-good-id="{{goodItem.goodId}}">-</text>
+<input class="change" value="{{goodItem.count}}" type="number" bindinput="handleInput" bindblur="handleBlur"
+data-good-id="{{goodItem.goodId}}"></input>
+<text class="plus" bindtap="goodCountPlus" dat
+a-good-id="{{goodItem.goodId}}">+</text>
+</view>
+</view>
+</view>
+</view>
+</view><!-- goods-item -->
+</block>
+</view><!-- store-goods-section -->
+</block>
+</view><!-- cart-group -->
+<view class="cart-bar">
+<view class="bar-selectall">
+<icon type="{{cartData.allSelected ? 'success' : 'circle'}}" 
+color="{{cartData.allSelected ? 'rgb(255, 70, 60)' : ''}}"
+bindtap="toggleAllEntry"></icon>
+<text>全选</text>
+</view>
+<view>
+<text>总计:</text>
+<text class="bartotalprice">¥{{cartData.totalPrice}}</text>
+</view>
+<block wx:if="{{cartData.totalPrice <= 0}}">
+<view class="bartoconfirm gray" bindtap="onClickToConfirm">去结算({{cartData.totalCount}})</view>
+</block>
+<block wx:else>
+<view class="bar-toconfirm" bindtap="onClickToConfirm">去结算({{cartData.totalCount}})</view>
+</block>
+</view>

@@ -1,1 +1,109 @@
 /* pages/user/index.wxss */
+page {
+  background-color: rgba(211, 211, 211, 0.4);
+  height: 100%;
+  font-size: 28rpx;
+  line-height: 1.6;
+  }
+.section {
+  margin: 10rpx 10rpx;
+  border-radius: 16rpx;
+  padding: 10rpx 12rpx;
+  background-color:white;
+}
+.user-info {
+  box-sizing: border-box;
+  padding: 128rpx 22rpx 22rpx 22rpx;
+  /* background-color:tomato; */
+  background-image:
+  linear-gradient(
+  rgba(255, 108, 06, 0.9), rgba(255, 108, 06, 0.1)
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20rpx;
+}
+.user-avatar-image {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.user-settings image {
+  width: 48rpx;
+  height: 48rpx;
+}
+.order-group {
+  display: flex;
+  flex-direction: column;
+  gap: 40rpx;
+  padding: 40rpx 20rpx;
+}
+.order-group-title {
+  display: flex;
+  justify-content: space-between;
+}
+.order-group-title text {
+  font-weight: 600;
+}
+.order-group-title view {
+  font-weight: 300;
+}
+.order-group-body {
+  display: flex;
+  justify-content: space-between;
+}
+.order-group-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.order-group-body image {
+  width: 48rpx;
+  height: 48rpx;
+}
+.order-count-circle {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  border:1px solid red;
+  background-color: white;
+  color: red;
+  font-size: 20rpx;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rpx;
+}
+.user-cell-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40rpx 0rpx;
+}
+.cell-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  border: 1px solid #f8f8f8;
+}
+.cell-box .left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:20rpx;
+}
+.cell-box .left image {
+  width: 40rpx;
+  height: 40rpx;
+}

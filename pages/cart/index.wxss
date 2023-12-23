@@ -1,1 +1,126 @@
 /* pages/cart/index.wxss */
+page {
+  background-color: rgba(211, 211, 211, 0.4);
+  height: 100%;
+  font-size: 28rpx;
+  line-height: 1.6;
+  --cp-cart-bar-height: 90rpx;
+  }
+  cart-group {
+    padding-bottom: var(--cp-cart-bar-height);
+    }
+    .store-goods-section {
+    margin: 16rpx 0rpx;
+    border-radius: 16rpx;
+    padding: 10rpx 16rpx;
+    background-color:white;
+    }
+    .store-line {
+    display: flex;
+    justify-content: flex-start;
+    gap:10rpx;
+    align-items: center;
+    }
+    .storelink {
+    display: flex;
+    justify-content: flex-start;
+    gap:10rpx;
+    align-items: center;
+    }
+    .storelink text {
+    font-weight: 500;
+    }
+    .storelink image {
+    width: 1em;
+    height: 1em;
+}
+.goods-item {
+display: flex;
+justify-content: flex-start;
+gap:10rpx;
+align-items: center;
+margin: 20rpx 0 40rpx 0;
+}
+.goods-item-image {
+width: 192rpx;
+height: 192rpx;
+}
+.good-item-details {
+flex: 1 1 auto;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+/* gap:10rpx; */
+padding: 0 10rpx;
+width: 500rpx;
+min-height: 192rpx;
+}
+.details-title {
+width: 100%;
+/* height: 60rpx; */
+line-height: 1.5em;
+max-height: 3em;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.details-numbers {
+display: flex;
+justify-content: space-between;
+gap:10rpx;
+align-items: center;
+}
+.details-price {
+color: red;
+}
+.cart-count {
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+/* gap:20rpx; */
+/* width: 70px; */
+font-weight: bold;
+text-align: center;
+}
+.cart-count text {
+box-sizing: border-box;
+width: 2rem;
+}
+.cart-count .change {
+width: 3rem;
+border-radius: 4px;
+background-color: #dcdcdc;
+font-weight: 400;
+/* font-size: 18px; */
+}
+.cart-bar {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+height: var(--cp-cart-bar-height);
+box-shadow: 0px -1px 1px rgba(0,0,0,0.2);
+padding: 10rpx 16rpx;
+box-sizing: border-box;
+background-color: white;
+z-index: 9;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.bar-selectall {
+  display: flex;
+  gap: 10rpx;
+  }
+  .bar-totalprice {
+  font-weight: bold;
+  flex-grow: 1;
+  }
+  .bar-toconfirm {
+  background-color:tomato;
+  border-radius: 32rpx;
+  padding: 10rpx 20rpx;
+  color: white;
+  }
+  .gray {
+  background-color:gray;
+  }

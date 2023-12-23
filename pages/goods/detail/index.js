@@ -1,5 +1,6 @@
 // pages/goods/detail/index.js
 import {getGoodDataById} from "../../../data/api"
+import {getGoodCountInCart, addtoCart, createOrderFromStore} from "../../../data/api"
 let goodId;
 Page({
 
@@ -21,6 +22,7 @@ Page({
       if(goodId) {       
         this.setData({         
           goodDetail: getGoodDataById(goodId), 
+          goodCountInCart: getGoodCountInCart(goodId)
     }); 
   } 
   },
@@ -89,23 +91,28 @@ Page({
   }, 
  
   //跳转到购物车页 
-  gotoCartPage() {     wx.switchTab({       url: '../../cart/index', 
+  gotoCartPage() {     
+    wx.switchTab({       
+      url: '../../cart/index', 
     }) 
   }, 
  
   //点击了购物车图标 
-  onClickCart(event) {     this.gotoCartPage(); 
+  onClickCart(event) {     
+    this.gotoCartPage(); 
   }, 
  
   //点击了“加入购物车” 
-  onClickAddCart(event) {     this.gotoCartPage(); 
+  onClickAddCart(event) {    
+    addtoCart({goodId, count: 1});
+    this.gotoCartPage();
   }, 
  
   //点击了“立即购买” 
   onClickBuyNow(event) { 
-    wx.showToast({ 
-      title: "未实现订单功能!",       icon: "error" 
-    }) 
-  } 
-     
+    createOrderFromStore(this.data.goodDetail.goodId);
+    wx.navigateTo({
+      url: '/pages/order/confirm/index',
+    })
+  }    
 }) 

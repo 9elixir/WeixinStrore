@@ -1,2 +1,80 @@
 <!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="user-info" bindtap="handleTodo">
+  <view class="user-avatar">
+    <image class="user-avatar-image" src="{{userData.avatarUrl}}">
+    </image>
+    <view class="user-avatar-name">{{userData.nickName}}</view>
+  </view>
+  <view class="user-settings">
+  <image src="/asserts/images/settings.png"> </image>
+  </view>
+</view>
+<view class="section order-group">
+  <view class="order-group-title">
+    <text>我的订单</text>
+    <view bindtap="handleTodo">全部订单 ></view>
+  </view>
+  <view class="order-group-body">
+    <view class="order-group-item item-pay" bindtap="handleTodo">
+      <image src="/asserts/images/pay.png"></image>
+      <text>待付款</text>
+      <span class="order-countcircle">{{orderData.count_PENDING_PAYMENT}}</span>
+    </view>
+    <view class="order-group-item item-todeliver" bindtap="handleTodo">
+      <image src="/asserts/images/deliver.png"></image>
+      <text>待发货</text>
+      <span class="order-countcircle">{{orderData.count_PENDING_DELIVERY}}</span>
+    </view>
+    <view class="order-group-item item-comment" bindtap="handleTodo">
+      <image src="/asserts/images/send.png"></image>
+      <text>待收货</text>
+      <span class="order-count-circle">{{orderData.count_PENDING_RECEIPT}}</span>
+    </view>
+    <view class="order-group-item item-ondeliver" bindtap="handleTodo">
+      <image src="/asserts/images/comment.png"></image>
+      <text>待评价</text>
+    </view>
+    <view class="order-group-item itemafterorder" bindtap="handleTodo">
+      <image src="/asserts/images/after-sale.png"></image>
+      <text>退款/售后</text>
+      </view>
+    </view>
+  </view>
+  <view class="section user-cell-group">
+    <view class="cell-box" bindtap="handleTodo">
+      <view class="left">
+        <image src="/asserts/images/location.png"></image>
+        <text>地址管理</text>
+      </view>
+      <view class="right">
+        <text>></text>
+      </view>
+    </view>
+    <view class="cell-box" bindtap="handleTodo">
+      <view class="left">
+        <image src="/asserts/images/help.png"></image>
+        <text>帮助中心</text>
+      </view>
+      <view class="right">
+        <text>></text>
+      </view>
+    </view>
+  <view class="cell-box" bindtap="handleTodo">
+    <view class="left">
+      <image src="/asserts/images/service.png"></image>
+      <text>客服热线</text>
+    </view>
+    <view class="right">
+      <text>></text>
+    </view>
+  </view>
+  <view class="cell-box" bindtap="handleTodo">
+    <view class="left">
+      <image src="/asserts/images/about.png"></image>
+      <text>关于商城</text>
+    </view>
+    <view class="right">
+      <text>></text>
+    </view>
+  </view>
+</view>

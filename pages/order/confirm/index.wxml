@@ -1,0 +1,47 @@
+<!--pages/order/confirm/index.wxml-->
+<block wx:if="{{orderData}}">
+  <view class="order-header" bindtap="addressClicked">
+    <vlew class="order-header-left">
+      <image class="order-header-image" src="/asserts/images/location.png" mode="aspectFill">
+      </image>
+        <view class="order-headerlocation">{{orderData.address}}</view>
+        </vlew>
+      <text>></text>
+    </view>
+    <view class="order-body-list">
+      <view class="list-item">
+        <text>商品数量</text>
+        <text>{{orderData.totalCount}}</text>
+      </view>
+    <view class="list-item">
+      <text>商品总额</text>
+      <text>¥{{orderData.totalPrice}}</text>
+    </view>
+    <view class="list-item">
+      <text>运费</text>
+      <text>¥{{orderData.shippingFeel}}</text>
+    </view>
+    <view class="list-item" bindtap="couponClicked" data-coupon-data="{{orderData.couponData}}">
+      <text>优惠券</text>
+      <text>></text>
+    </view>
+    <view class="list-item" bindtap="fapiaoClicked" data-fapiao-data="{{orderData.fapiaoData}}">
+      <text>发票</text>
+      <text>></text>
+    </view>
+    <view class="list-item" bindtap="ordernotesClicked" data-note-data="{{orderData.noteData}}">
+      <text>订单备注</text>
+      <text>></text>
+    </view>
+  </view>
+  <view class="order-bar">
+    <view class="bar-left">
+      <text>总计:</text>
+      <text class="bartotalprice">¥{{orderData.totalPrice}}</text>
+    </view>
+    <view class="bar-topay" bindtap="onClickTopay" data-order-id="{{orderData.orderId}}">支付</view>
+    </view>
+</block>
+<block wx:else>
+  <view>未知订单</view>
+</block>

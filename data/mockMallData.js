@@ -1,3 +1,5 @@
+
+
 //首页banner滚动图 
 let mockBannerData = [ 
   { imgurl:"//img11.360buyimg.com/pop/s1180x940_jfs/t1/120230/5/30351/61851/63ff2380F1027c53c/f8c95bb19669d5f0.jpg.avif",    

@@ -4,7 +4,9 @@
     "pages/category/index",
     "pages/cart/index",
     "pages/user/index",
-    "pages/goods/detail/index"
+    "pages/goods/detail/index",
+    "pages/order/confirm/index",
+    "pages/order/pay/index"
   ],
   "tabBar": {
     "color": "#000",

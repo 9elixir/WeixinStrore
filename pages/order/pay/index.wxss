@@ -1,0 +1,30 @@
+/* pages/order/pay/index.wxss */
+.pay-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rpx;
+  padding-top: 120rpx;
+  padding-bottom: 60rpx;
+  }
+.pay-result text {
+  font-size: 40rpx;
+}
+.pay-link-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40rpx;
+}
+.order {
+  font-size: 24rpx;
+  text-align: center;
+  font-weight: lighter;
+  padding-bottom: 40rpx;
+}
+.pay-link {
+  border-radius: 32rpx;
+  border: 1rpx solid red;
+  color: red;
+  padding: 20rpx 80rpx;
+}
